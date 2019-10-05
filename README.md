@@ -35,14 +35,14 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 #Download anaconda3
    wget https://repo.anaconda.com/archive/Anaconda3-2019.07-Linux-x86_64.sh
 #Make install script executable 
-   chmod a+x Anaconda3-2019.03-Linux-x86_64.sh
+   chmod a+x Anaconda3-2019.07-Linux-x86_64.sh
 #Run install script using defaults
-   ./Anaconda3-2019.03-Linux-x86_64.sh
-#Add conda-forge channels
-   conda config --add channels conda-forge
+   ./Anaconda3-2019.07-Linux-x86_64.sh
 #Create enviorment (optional)
    conda create --name draw_rect
    conda activate draw_rect
+#Add conda-forge channels
+   conda config --add channels conda-forge
 #Install PySide2
    conda install pyside2 
 ````
