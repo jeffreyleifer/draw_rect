@@ -18,7 +18,7 @@ Extended from  QWidget
 class RectangleCreator(QWidget):                    
     def __init__(self):
         super().__init__()           
-        """ Setuup """
+        """ Setup """
         self.setMouseTracking(True)
         self.begin = QPoint()
         self.end = QPoint()
