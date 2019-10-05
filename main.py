@@ -4,9 +4,10 @@ from rect_creator import RectangleCreator
 
 if __name__ == '__main__':
     import sys
+    print('Launching draw_rec...')
     app = QApplication(sys.argv)
     w = RectangleCreator()
     w.resize(640, 480)
     w.show()
+    print('Ready')
     sys.exit(app.exec_())
-
