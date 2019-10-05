@@ -77,6 +77,6 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
     - Contained
     - Intersect
 ##### rectangle.py
- - Rectangle object extend from the QRect object
+ - Rectangle object extended from the [QRect](https://doc-snapshots.qt.io/qtforpython/PySide2/QtCore/QRect.html) Qt class
  - Helper functions to change rectangle orientation and get rectangle characteristics
 
