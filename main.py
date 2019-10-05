@@ -2,6 +2,9 @@ import sys
 from PySide2.QtWidgets import QApplication
 from rect_creator import RectangleCreator
 
+#TODO add logger instead of print statements
+#TODO add ctrl-c enabled quit
+
 if __name__ == '__main__':
     import sys
     print('Launching draw_rec...')

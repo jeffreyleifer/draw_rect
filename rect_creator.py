@@ -8,13 +8,11 @@ from PySide2.QtGui import QPen
 from draw_utils import is_adjacent, is_contained, is_intersect
 from rectangle import Rectangle
 
-
 """
 Rectangle Creator:
-GUI to create rectangles
-Extended from  QWidget
+* GUI to create rectangles
+* Extended from QWidget
 """
-
 class RectangleCreator(QWidget):                    
     def __init__(self):
         super().__init__()           
@@ -28,10 +26,9 @@ class RectangleCreator(QWidget):
 
     """
     Paint Event
-        Paints Rectangles onto a Pixmap
-        from a list of coordinates
-        Stores created rectangles in a list
-        Rectangle store is cleared and rebuild each iteration
+    * Paints Rectangles onto a Pixmap from a list of coordinates
+    * Stores created rectangles in a list
+    * Rectangle store is cleared and rebuild each iteration
     """ 
     def paintEvent(self, event):
         pixmap = QPixmap()
@@ -43,8 +40,8 @@ class RectangleCreator(QWidget):
         painter.setPen(pen)
         """Rebuild rectangle store"""
         self.rect_list.clear() 
-        for rect in self.coord_list:
-           rec = Rectangle(rect[0], rect[1])
+        for coord in self.coord_list:
+           rec = Rectangle(coord[0], coord[1])
            self.rect_list.append(rec)
            painter.drawRect(rec)
         if not self.clicked:
@@ -52,13 +49,12 @@ class RectangleCreator(QWidget):
         rec = Rectangle(self.begin, self.end)
         self.rect_list.append(rec)
         painter.drawRect(rec)
-        #self.update()
 
     """
-      mousePressEvent
-         Deletes oldest rectangle from the coordinate list
-         Updates begin and end values
-         Tracks click for use in display of rectangles
+    mousePressEvent
+    * Deletes oldest rectangle from the coordinate list
+    * Updates begin and end values
+    * Tracks click for use in display of rectangles
     """
     def mousePressEvent(self, event):
         if(len(self.coord_list) > 1):
@@ -69,9 +65,9 @@ class RectangleCreator(QWidget):
         self.update()
 
     """
-      mouseMoveEvent
-        Updates endpoint
-        Updates Coordinates on display
+    mouseMoveEvent
+    * Updates endpoint
+    * Updates Coordinates on display
     """
     def mouseMoveEvent(self, event):
         self.end = event.pos()
@@ -79,12 +75,13 @@ class RectangleCreator(QWidget):
         self.update()
 
     """
-      mouseReleaseEvent
-        Checks for position of start and end points of triangle
-        Transforms trangle so start is topleft and end is bottom right
-        Adds triangle coordinates to the coordinates list
-        If two triangles exist:
-        Runs test for Adjacent, contained and intersection #TODO move/cleanup tests
+    mouseReleaseEvent
+    * Checks for position of start and end points of triangle
+    * Transforms triangle so start is topleft and end is bottom right
+    * Adds triangle coordinates to the coordinates list
+    * If two triangles exist:
+       *  Runs test for Adjacent, contained and intersection 
+    #TODO move/cleanup tests
     """
     def mouseReleaseEvent(self, event):
   
@@ -121,8 +118,8 @@ class RectangleCreator(QWidget):
      
     """
     flip_hor
-     Call rectangle flip_h function 
-     Flip start and end points horizontal
+    * Call rectangle flip_h function 
+    * Flip start and end points horizontal
     """
     def flip_hor(self,rect):
         rect.flip_h()
@@ -131,8 +128,8 @@ class RectangleCreator(QWidget):
         return rect
     """
     flip_ver
-     Calls rectagle flip_v function and
-     Flip start and end points vertical
+    * Calls rectangle flip_v function and
+    * Flip start and end points vertical
     """
     def flip_ver(self,rect):
         rect.flip_v()
@@ -142,11 +139,9 @@ class RectangleCreator(QWidget):
 
     """
     reflect
-       Calls flip_hor then flip_ver to produce a 
-       reflection of the start and end points as
-       well as the input rectangle coordinates
+    * Calls flip_hor then flip_ver to produce a reflection of the start and end points
+    * Same as above for the input rectangle coordinates
     """
-
     def reflect(self,rect):
         rect = self.flip_hor(rect)
         rect = self.flip_ver(rect)
