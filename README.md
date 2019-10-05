@@ -6,10 +6,10 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
      Better document inline functions
 
 ### Table of Contents:
-##### [-Overview-](#overview)
-##### [-Build-](#build)
-##### [-Usage-](#usage)
-##### [-Files-](#files)
+- ##### [-Overview-](#overview)
+- ##### [-Build-](#build)
+- ##### [-Usage-](#usage)
+- ##### [-Files-](#files)
 
 
 ## Overview
