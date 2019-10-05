@@ -14,7 +14,7 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 
 ## Overview
 ---
-- [Qt for Python](yahoo.com) based GUI draw two rectangles. Includes supporting code to determine the following
+- [Qt for Python](https://www.qt.io/qt-for-python) based GUI draw two rectangles. Includes supporting code to determine the following
    -  Is Adjacent
        - Does the two rectangles share a common side
       - Is conditional that one rectangle is not inside the other
@@ -42,7 +42,7 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
    conda config --add channels conda-forge
 #Create enviorment (optional)
    conda create --name draw_rect
-   conda ativate draw_rect
+   conda activate draw_rect
 #Install PySide2
    conda install pyside2 
 ````
@@ -56,7 +56,7 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
  ```
  - Draw rectangles using the mouse and holding the left mouse button
  - Only two rectangles can be drawn at one time.
- - Once a new rectangle is create the oldest rectangle is destroyed
+    - Once a new rectangle is created, the oldest rectangle is destroyed
  TODO Screenshots here for:
 -Adjacent
 -Contained
