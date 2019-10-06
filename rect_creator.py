@@ -83,12 +83,11 @@ class RectangleCreator(QWidget):
 
     """
     mouseReleaseEvent
-    * Checks for position of start and end points of triangle
-    * Transforms triangle so start is topleft and end is bottom right
-    * Adds triangle coordinates to the coordinates list
-    * If two triangles exist:
+    * Checks for position of start and end points of rectangle
+    * Transforms rectangle so start is topleft and end is bottom right
+    * Adds rectangle coordinates to the coordinates list
+    * If two rectangle exist:
        *  Runs test for Adjacent, contained and intersection 
-    .. TODO:: check that arg2 is non zero. move/cleanup tests
     """
     def mouseReleaseEvent(self, event):
         """Needs horizontal flip?""" 
