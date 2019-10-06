@@ -1,5 +1,5 @@
 # Draw Rect Exercise
-Jeffrey Leifer 2019-10-05 v1  [License](LICENSE.md)
+Jeffrey Leifer 2019-10-05 v1.0  [License](LICENSE.md)
 
 TODO Cleanup rect_creator, make some more helpers in rectangle class
      make unit tests
@@ -61,9 +61,10 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 ##### Examples    
 <img src="share/adjscreen.jpg" width="700">
 
+<img src="share/interscreen.jpg" width="700">
+
 <img src="share/containedscreen.jpg" width="700">
 
-<img src="share/interscreen.jpg" width="700">
 
 
 ## Files
