@@ -33,7 +33,7 @@ class RectangleCreator(QWidget):
     * Rectangle store is cleared and rebuild each iteration
     """ 
     def paintEvent(self, event):
-        """Create Pallet"""
+        """Create pallet"""
         pixmap = QPixmap()
         painter = QPainter(self)
         painter.drawPixmap(self.rect(), pixmap)

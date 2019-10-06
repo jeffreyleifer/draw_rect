@@ -51,9 +51,13 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 ---
  To run the GUI 
  ```
- cd draw_rect/
  python main.py
  ```
+ To run unit tests
+ ```
+ python unittests.py
+ ```
+ 
  - Draw rectangles using the mouse and holding the left mouse button
  - Only two rectangles can be drawn at one time.
     - Once a new rectangle is created, the oldest rectangle is destroyed
@@ -84,4 +88,8 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 ##### rectangle.py
  - Rectangle object extended from the [QRect](https://doc-snapshots.qt.io/qtforpython/PySide2/QtCore/QRect.html) Qt class
  - Helper functions to change rectangle orientation
+##### constants.py
+ - Constant variables for the project
+##### unittests.py
+ - Project unit tests
 
