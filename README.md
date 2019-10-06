@@ -58,14 +58,13 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
  - Only two rectangles can be drawn at one time.
     - Once a new rectangle is created, the oldest rectangle is destroyed
     
-    
-![Adjacent](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/adjscreen.jpg)
+##### Examples    
+<img src="share/adjscreen.jpg" width="700">
 
+<img src="share/containedscreen.jpg" width="700">
 
-![Contained](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/containedscreen.jpg)
+<img src="share/interscreen.jpg" width="700">
 
-
-![Intersection](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/interscreen.jpg)
 
 ## Files
 ---
