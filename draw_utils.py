@@ -5,11 +5,10 @@ from constants import TOLERANCE
 
 """
 is_adjacent
-* Checks for adjacency of two rectangles within
-* a certain tolerance
+* Checks for adjacency of two rectangles within a certain tolerance
 * Silence parameter for use as a helper function
 * Adjacency defined as exterior adjacency only
-* Interior adjacency viewed not adjacent
+* Interior adjacency not viewed as adjacent
 * Algorithm: 
 ** Get topLeft and BottomRight points of Rectangle A
 ** Get reflection of topLeft and BottomRight points of Rectangle B
@@ -50,7 +49,7 @@ def is_adjacent(rect1,rect2,silent):
 """
 is_contained
 * Calls is_intersect and is_adjacent as helper functions to determain if rect2 is fully within rect1
-* Contained is defined as within not touching any boundaries 
+* Contained is defined as within while not touching any boundaries 
 * Algorithm:
 ** Try to generate intersection area rectangle
 ** If intersection area rectangle exits, check if it has any adjacent sides
@@ -66,7 +65,6 @@ def is_contained(rect1,rect2):
     else:
         print('Is contained!')
         return True 
-
 
 
 """
@@ -129,8 +127,8 @@ get_intersection_rectangle
 * Algorithm:
 ** Get TopLeft & bottomRight of both rectangles
 ** Get max of topLeft's and min of bottomRight's
-** Max's produce topLeft of intersection area rectangle
-** Min's produce bottomRight of intersection area rectangle
+** Max's produce topLeft points of intersection area rectangle
+** Min's produce bottomRight points of intersection area rectangle
 """
 def get_intersection_rectangle(rect1,rect2):
     
