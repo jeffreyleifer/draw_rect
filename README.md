@@ -57,10 +57,15 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
  - Draw rectangles using the mouse and holding the left mouse button
  - Only two rectangles can be drawn at one time.
     - Once a new rectangle is created, the oldest rectangle is destroyed
- TODO Screenshots here for:
--Adjacent
--Contained
--Intersection
+    
+    
+![Adjacent](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/adjscreen.jpg)
+
+
+![Contained](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/containedscreen.jpg)
+
+
+![Intersection](https://github.com/jeffreyleifer/draw_rect/blob/dev/share/interscreen.jpg)
 
 ## Files
 ---
@@ -78,5 +83,5 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
     - Intersect
 ##### rectangle.py
  - Rectangle object extended from the [QRect](https://doc-snapshots.qt.io/qtforpython/PySide2/QtCore/QRect.html) Qt class
- - Helper functions to change rectangle orientation and get rectangle characteristics
+ - Helper functions to change rectangle orientation
 
