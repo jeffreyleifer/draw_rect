@@ -1,9 +1,6 @@
 # Draw Rect Exercise
 Jeffrey Leifer 2019-10-05 v1.0  [License](LICENSE.md)
 
-TODO Cleanup rect_creator, make some more helpers in rectangle class
-     make unit tests
-     Better document inline functions
 
 ### Table of Contents:
 ##### [-Overview-](#overview) 
@@ -14,22 +11,24 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 
 ## Overview
 ---
-- [Qt for Python](https://www.qt.io/qt-for-python) based GUI draw two rectangles. Includes supporting code to determine the following
+- [Qt for Python](https://www.qt.io/qt-for-python) based GUI draw two rectangles. 
+
+Includes supporting code to determine the following:
    -  Is Adjacent
-       - Does the two rectangles share a common side
-      - Is conditional that one rectangle is not inside the other
+      - Does the two rectangles share a common side?
+      - Is conditional that one rectangle is not inside the other?
    -  Is Contained
-      - One Rectangle is fully within the other
+      - Is one rectangle is fully within the other?
   -  Intersection
-      - Do any of the sides for the two rectangles intersect.
-      - What are the intersection points
+      - Do any of the sides for the two rectangles intersect?
+      - What are the intersection points?
      
-  - Mouse tracking displays the xy position of the mouse on the wider header 
+Mouse tracking displays the xy position of the mouse on the widget header 
 
 ## Build 
 ---
-### python3 and install PySide2
-- Running of the software requires Python3 and the PySide2 module 
+### Install python3 PySide2
+- Running the software requires Python3 and the PySide2 module 
 - Below is the install process using Anaconda3 on a CentOS Linux operating system
 ```
 #Download anaconda3
@@ -49,17 +48,17 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 
 ## Usage
 ---
- To run the GUI 
+ Run the GUI 
  ```
  python main.py
  ```
- To run unit tests
+ Run unit tests
  ```
  python unittests.py
  ```
  
  - Draw rectangles using the mouse and holding the left mouse button
- - Only two rectangles can be drawn at one time.
+ - Only two rectangles can be drawn at one time
     - Once a new rectangle is created, the oldest rectangle is destroyed
     
 ##### Examples    
@@ -93,3 +92,4 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
 ##### unittests.py
  - Project unit tests
 
+---
