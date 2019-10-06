@@ -1,0 +1,3 @@
+ADJ_TOLERANCE = 7
+RECT_A = 1
+RECT_B = 2

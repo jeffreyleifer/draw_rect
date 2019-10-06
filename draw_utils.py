@@ -4,31 +4,25 @@ from rectangle import Rectangle
 
 """
 is_adjacent
-  Checks for adjacentcy of two rectangles within
-  a certain tolerance
-  Silence parameter for use as a helper function
-  Adjacentcy defined as exterior adjacentcy only
-  Interior adjacentcy viewed not adjacent
-  TODO Algorithm explanation
-  Low level example
+* Checks for adjacency of two rectangles within
+* a certain tolerance
+* Silence parameter for use as a helper function
+* Adjacency defined as exterior adjacency only
+* Interior adjacency viewed not adjacent
+.. TODO:: Algorithm explanation
 """
 def is_adjacent(rect1,rect2,silent):
-    rect2.refl()        
+    #rect2.refl()        
     r1_tl = rect1.topLeft()
     r1_br = rect1.bottomRight()
     r2_tl = rect2.topLeft()
     r2_br = rect2.bottomRight()
-    rect2.refl()       
+    #rect2.refl()       
 
-    diffleft = r1_tl.x() - r2_tl.x()
-    diffright = r1_br.x() - r2_br.x()
-    difftop = r1_tl.y() - r2_tl.y()
-    diffbot = r1_br.y() - r2_br.y()
-
-    #print(diffleft)
-    #print(diffright)
-    #print(difftop)
-    #print(diffbot)
+    diffleft = r1_tl.x() - r2_tr.x()
+    diffright = r1_br.x() - r2_bl.x()
+    difftop = r1_tl.y() - r2_tr.y()
+    diffbot = r1_br.y() - r2_bl.y()
 
     adj_list = []     
     if difftop > - 7 and  difftop < 7:
@@ -49,11 +43,9 @@ def is_adjacent(rect1,rect2,silent):
 
 """
 is_contained
-  Calls is_intersect and is_adjacent as 
-  helper funtions to determain if rect2 is fullly within rect1
-  contained is defined as within not touching any boundries
-  Reuse example
-
+* Calls is_intersect and is_adjacent as helper functions to determain if rect2 is fully within rect1
+* Contained is defined as within not touching any boundaries 
+.. TODO:: break intersect method and use interect rectangle only
 """
 def is_contained(rect1,rect2):
     intersect_rect = is_intersect(rect1,rect2,silent=True)
@@ -68,11 +60,11 @@ def is_contained(rect1,rect2):
 
 """
 is_intersect
-  Checks if rect1 and rect2 intersect 
-  If they intersect, uses QLineF containers to determine intersection points
-  intersection is defined as filly crossing boundrous of the other
-  TODO explain algorithm cleanup and use helpers
-  High level example
+* Checks if rect1 and rect2 intersect 
+* If they intersect, uses QLineF containers to determine intersection points
+* intersection is defined as filly crossing boundaries of the other
+.. TODO:: explain algorithm cleanup and use helpers
+.. TODO:: Split up into intersection points and intersection rectangle 
 """
 
 def is_intersect(rect1,rect2,silent):
@@ -87,7 +79,7 @@ def is_intersect(rect1,rect2,silent):
     r2_bl = rect2.bottomLeft()
     
     #TODO Move to external function
-    #creates intersection rectagnle
+    #creates intersection rectangle
     x1 = max(r1_tl.x(),r2_tl.x())
     x2 = min(r1_br.x(),r2_br.x())
     y1 = max(r1_tl.y(),r2_tl.y())

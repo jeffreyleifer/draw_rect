@@ -38,7 +38,7 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
    chmod a+x Anaconda3-2019.07-Linux-x86_64.sh
 #Run install script using defaults
    ./Anaconda3-2019.07-Linux-x86_64.sh
-#Create enviorment (optional)
+#Create environment (optional)
    conda create --name draw_rect
    conda activate draw_rect
 #Add conda-forge channels
