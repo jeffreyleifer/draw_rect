@@ -1,5 +1,5 @@
 # Draw Rect Exercise
-Jeffrey Leifer 2019-10-05 v1.0  [License](LICENSE.md)
+Jeffrey Leifer 2019-10-06 v1.0  [License](LICENSE.md)
 
 
 ### Table of Contents:
