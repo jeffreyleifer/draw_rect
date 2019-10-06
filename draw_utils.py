@@ -1,7 +1,7 @@
 from PySide2.QtCore import QPoint
 from PySide2.QtCore import QLineF
 from rectangle import Rectangle
-import constants
+from constants import TOLERANCE
 
 """
 is_adjacent
@@ -58,7 +58,7 @@ is_contained
 """
 def is_contained(rect1,rect2):
     #intersect_rect = is_intersect(rect1,rect2,silent=True)
-    intersect_rect = get_intersection_rectangle
+    intersect_rect = get_intersection_rectangle(rect1,rect2)
     if intersect_rect == None:
         return False
     intersect_rect.refl()
@@ -68,8 +68,21 @@ def is_contained(rect1,rect2):
         print('Is contained!')
         return True 
 
+
+
 """
 is_intersect
+* Helper to call intersection validation routines
+"""
+def is_intersect(rect1,rect2):
+    inter_rect = get_intersection_rectangle(rect1,rect2)
+    if inter_rect == None:
+        return False
+    get_intersection_points(rect1,rect2)
+    return True
+
+"""
+get_intersection_points
 * Prints intersection points of rect1 and rect2
 * Uses QLineF containers to determine intersection points
 * Intersection is defined as a line fully crossing boundaries of the other
@@ -79,7 +92,7 @@ is_intersect
 ** Get intersection points 
 """
 
-def is_intersection_points(rect1,rect2):
+def get_intersection_points(rect1,rect2):
     r1_tl = rect1.topLeft()
     r1_tr = rect1.topRight()
     r1_br = rect1.bottomRight()
@@ -120,7 +133,7 @@ get_intersection_rectangle
 ** Max's produce topLeft of intersection area rectangle
 ** Min's produce bottomRight of intersection area rectangle
 """
-def get_intersection_rectangle(rect1,rect2)
+def get_intersection_rectangle(rect1,rect2):
     
     r1_tl = rect1.topLeft()
     r1_br = rect1.bottomRight()
@@ -137,3 +150,7 @@ def get_intersection_rectangle(rect1,rect2)
     if(x1 < x2 and y1 <  y2):      
        return Rectangle(QPoint(x1,y1),QPoint(x2,y2))
     return None
+
+
+
+

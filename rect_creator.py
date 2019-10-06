@@ -5,9 +5,10 @@ from PySide2.QtWidgets import QWidget, QLabel
 from PySide2.QtGui import QPainter
 from PySide2.QtGui import QPixmap
 from PySide2.QtGui import QPen
-from draw_utils import is_adjacent, is_contained, is_intersect
+from draw_utils import is_adjacent, is_contained,is_intersect
+                        
 from rectangle import Rectangle
-import constants
+from constants import RECT_A,RECT_B,PEN_WIDTH
 
 """
 Rectangle Creator:
@@ -37,7 +38,7 @@ class RectangleCreator(QWidget):
         painter = QPainter(self)
         painter.drawPixmap(self.rect(), pixmap)
         pen = QPen()
-        pen.setWidth(5)
+        pen.setWidth(PEN_WIDTH)
         pen.setColor(Qt.black)
         painter.setPen(pen)
 
@@ -62,7 +63,7 @@ class RectangleCreator(QWidget):
     """
     def mousePressEvent(self, event):
         """Remove oldest"""
-        if(len(self.coord_list) > 1):
+        if len(self.coord_list) > 1:
            self.coord_list.pop(0)
         """Update tracking variables"""   
         self.begin = event.pos()
@@ -95,8 +96,8 @@ class RectangleCreator(QWidget):
            if len(self.rect_list) == 1:
               self.rect_list[RECT_A] = self.flip_hor(self.rect_list[RECT_A])
            else:
-              self.rect_list[RECT_B] = self.flip_hor(self.rect_list[RECT_B1])
-       """Needs vertical flip?"""
+              self.rect_list[RECT_B] = self.flip_hor(self.rect_list[RECT_B])
+        """Needs vertical flip?"""
         if self.begin.x() < self.end.x() and self.begin.y() > self.end.y():
            if len(self.rect_list) == 1:
               self.rect_list[RECT_A] = self.flip_ver(self.rect_list[RECT_A])
@@ -115,13 +116,13 @@ class RectangleCreator(QWidget):
         self.coord_list.append([self.begin,self.end])
         
         """Run Tests"""
-        if(len(self.coord_list) == 2):
-           is_adjacent(self.rect_list[RECT_A],self.rect_list[RECT_B],silent=False)\
+        if len(self.coord_list) == 2:
+           is_adjacent(self.rect_list[RECT_A],self.rect_list[RECT_B],silent=False)
            contained = is_contained(self.rect_list[RECT_A],self.rect_list[RECT_B])
            if not contained:
               contained = is_contained(self.rect_list[RECT_B],self.rect_list[RECT_A])
            if not contained:
-              is_intersect(self.rect_list[RECT_A],self.rect_list[RECT_B],silent=False)
+              is_intersect(self.rect_list[RECT_A],self.rect_list[RECT_B]) 
         print('------')
   
      
