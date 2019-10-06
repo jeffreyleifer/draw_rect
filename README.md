@@ -11,7 +11,7 @@ Jeffrey Leifer 2019-10-06 v1.0  [License](LICENSE.md)
 
 ## Overview
 ---
-- [Qt for Python](https://www.qt.io/qt-for-python) based GUI to draw two rectangles. 
+[Qt for Python](https://www.qt.io/qt-for-python) based GUI to draw two rectangles. 
 
 Includes supporting code to determine the following:
    -  Is Adjacent
