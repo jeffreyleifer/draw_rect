@@ -1,5 +1,5 @@
 # Draw Rect Exercise
-Jeffrey Leifer 2019-10-05 v1  [License](LICENSE.md)
+Jeffrey Leifer 2019-10-05 v1.0  [License](LICENSE.md)
 
 TODO Cleanup rect_creator, make some more helpers in rectangle class
      make unit tests
@@ -57,10 +57,15 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
  - Draw rectangles using the mouse and holding the left mouse button
  - Only two rectangles can be drawn at one time.
     - Once a new rectangle is created, the oldest rectangle is destroyed
- TODO Screenshots here for:
--Adjacent
--Contained
--Intersection
+    
+##### Examples    
+<img src="share/adjscreen.jpg" width="700">
+
+<img src="share/interscreen.jpg" width="700">
+
+<img src="share/containedscreen.jpg" width="700">
+
+
 
 ## Files
 ---
@@ -78,5 +83,5 @@ TODO Cleanup rect_creator, make some more helpers in rectangle class
     - Intersect
 ##### rectangle.py
  - Rectangle object extended from the [QRect](https://doc-snapshots.qt.io/qtforpython/PySide2/QtCore/QRect.html) Qt class
- - Helper functions to change rectangle orientation and get rectangle characteristics
+ - Helper functions to change rectangle orientation
 
