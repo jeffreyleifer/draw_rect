@@ -3,13 +3,15 @@ from PySide2.QtCore import QPoint
 
 """
 Rectangle
+:param begin: QPoint object for top left coordinate of rectangle
+:param end: QPoint object for bottom right coordinate of rectangle
 * Rectangle class derived from QRect
 * Includes rotation functions and helper function for points
 """
 
 class Rectangle(QRect):
     def __init__(self,begin,end):
-        super().__init__(begin_point,end_point)
+        super().__init__(begin,end)
     
     """
      flip_h

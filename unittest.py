@@ -1,7 +1,7 @@
 import unittest
 from draw_utils import is_adjacent, is_contained, is_intersect
 from rectangle import Rectangle
-class TestStringMethods(unittest.TestCase):
+class TestDrawUtilsMethods(unittest.TestCase):
 
     def test_isAdjacent(self):
         

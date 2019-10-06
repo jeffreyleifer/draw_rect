@@ -7,6 +7,7 @@ from PySide2.QtGui import QPixmap
 from PySide2.QtGui import QPen
 from draw_utils import is_adjacent, is_contained, is_intersect
 from rectangle import Rectangle
+import constants
 
 """
 Rectangle Creator:
@@ -31,6 +32,7 @@ class RectangleCreator(QWidget):
     * Rectangle store is cleared and rebuild each iteration
     """ 
     def paintEvent(self, event):
+        """Create Pallet"""
         pixmap = QPixmap()
         painter = QPainter(self)
         painter.drawPixmap(self.rect(), pixmap)
@@ -38,14 +40,16 @@ class RectangleCreator(QWidget):
         pen.setWidth(5)
         pen.setColor(Qt.black)
         painter.setPen(pen)
+
         """Rebuild rectangle store"""
         self.rect_list.clear() 
         for coord in self.coord_list:
-           rec = Rectangle(coord[0], coord[1])
+           rec = Rectangle(coord[RECT_A], coord[RECT_B])
            self.rect_list.append(rec)
            painter.drawRect(rec)
         if not self.clicked:
            return
+        """Create new rectangle"""   
         rec = Rectangle(self.begin, self.end)
         self.rect_list.append(rec)
         painter.drawRect(rec)
@@ -57,8 +61,10 @@ class RectangleCreator(QWidget):
     * Tracks click for use in display of rectangles
     """
     def mousePressEvent(self, event):
+        """Remove oldest"""
         if(len(self.coord_list) > 1):
            self.coord_list.pop(0)
+        """Update tracking variables"""   
         self.begin = event.pos()
         self.end = event.pos()
         self.clicked = True
@@ -81,38 +87,41 @@ class RectangleCreator(QWidget):
     * Adds triangle coordinates to the coordinates list
     * If two triangles exist:
        *  Runs test for Adjacent, contained and intersection 
-    #TODO move/cleanup tests
+    .. TODO:: check that arg2 is non zero. move/cleanup tests
     """
     def mouseReleaseEvent(self, event):
-  
+        """Needs horizontal flip?""" 
         if self.begin.x() > self.end.x() and self.begin.y() < self.end.y():
            if len(self.rect_list) == 1:
-              self.rect_list[0] = self.flip_hor(self.rect_list[0])
+              self.rect_list[RECT_A] = self.flip_hor(self.rect_list[RECT_A])
            else:
-              self.rect_list[1] = self.flip_hor(self.rect_list[1])
-
+              self.rect_list[RECT_B] = self.flip_hor(self.rect_list[RECT_B1])
+       """Needs vertical flip?"""
         if self.begin.x() < self.end.x() and self.begin.y() > self.end.y():
            if len(self.rect_list) == 1:
-              self.rect_list[0] = self.flip_ver(self.rect_list[0])
+              self.rect_list[RECT_A] = self.flip_ver(self.rect_list[RECT_A])
            else:
-              self.rect_list[1] = self.flip_ver(self.rect_list[1])
-
+              self.rect_list[RECT_B] = self.flip_ver(self.rect_list[RECT_B])
+        """Needs refection?"""
         if self.begin.x() > self.end.x() and self.begin.y() > self.end.y():
            if len(self.rect_list) == 1:
-              self.rect_list[0] = self.reflect(self.rect_list[0])
+              self.rect_list[RECT_A] = self.reflect(self.rect_list[RECT_A])
            else:
-              self.rect_list[1] = self.reflect(self.rect_list[1])
+              self.rect_list[RECT_B] = self.reflect(self.rect_list[RECT_B])
 
         self.clicked = False
         self.update()
+        """Add new coordinates to the coordinates list"""
         self.coord_list.append([self.begin,self.end])
+        
+        """Run Tests"""
         if(len(self.coord_list) == 2):
-           is_adjacent(self.rect_list[0],self.rect_list[1],silent=False)
-           contained = is_contained(self.rect_list[0],self.rect_list[1])
+           is_adjacent(self.rect_list[RECT_A],self.rect_list[RECT_B],silent=False)\
+           contained = is_contained(self.rect_list[RECT_A],self.rect_list[RECT_B])
            if not contained:
-              contained = is_contained(self.rect_list[1],self.rect_list[0])
+              contained = is_contained(self.rect_list[RECT_B],self.rect_list[RECT_A])
            if not contained:
-              is_intersect(self.rect_list[0],self.rect_list[1],silent=False)
+              is_intersect(self.rect_list[RECT_A],self.rect_list[RECT_B],silent=False)
         print('------')
   
      
