@@ -57,7 +57,6 @@ is_contained
 ** If intersection area rectangle exists and it has no adjacent sides it is contained 
 """
 def is_contained(rect1,rect2):
-    #intersect_rect = is_intersect(rect1,rect2,silent=True)
     intersect_rect = get_intersection_rectangle(rect1,rect2)
     if intersect_rect == None:
         return False
