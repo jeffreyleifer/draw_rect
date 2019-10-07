@@ -16,9 +16,9 @@ Jeffrey Leifer 2019-10-06 v1.0  [License](LICENSE.md)
 Includes supporting code to determine the following:
    -  Is Adjacent
       - Does the two rectangles share a common side?
-      - Is conditional that one rectangle is not inside the other?
+      - Is conditional that one rectangle is not inside the other
    -  Is Contained
-      - Is one rectangle is fully within the other?
+      - Is one rectangle fully within the other?
   -  Intersection
       - Do any of the sides for the two rectangles intersect?
       - What are the intersection points?
